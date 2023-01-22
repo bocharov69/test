@@ -1,0 +1,424 @@
+@mixin main-title {
+  font-family: 'Posterama Text', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+  
+  text-align: center;
+  letter-spacing: -0.04em;
+  
+  color: #FFFFF0;
+
+  @media(min-width: 768px){
+    font-size: 48px;
+  }
+  @media(min-width: 1440px){
+    font-size: 110px;
+  }
+}
+
+@mixin secondary-title {
+  font-family: 'Posterama Text', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+
+  
+  text-align: center;
+  letter-spacing: -0.01em;
+  
+  /* Primary Black */
+  
+  color: $darkGrey;
+
+
+  @media(min-width: 768px){
+    font-size: 36px;
+    line-height: 100%;
+  }
+  @media(min-width: 1440px){
+    font-size: 64px;
+  }
+}
+
+@mixin third-title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;  
+  
+  /* Primary Black */
+    
+  color: $darkGrey;
+
+
+  @media(min-width: 1440px){
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@mixin third-title-big {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;  
+  
+  /* Primary Black */
+    
+  color: $darkGrey;
+
+
+  @media(min-width: 1440px){
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@mixin fourth-title($color: $white){
+  
+  font-family: 'Posterama Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  color:  $color;
+
+  @media(min-width: 1440px){
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+
+@mixin fifth-title($color: $darkGrey){
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.01em;
+  color: $color;
+
+  @media(min-width: 768px){
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media(min-width: 1440px){
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@mixin title-modal{
+  font-family: 'Posterama Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: $darkGrey;
+  @media(min-width: 768px){
+    font-size: 24px;
+  }
+  @media(min-width: 1440px){
+    font-size: 36px;
+  }
+}
+
+@mixin title-success-form{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: $darkGrey;
+
+  @media(min-width: 768px){
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  @media(min-width: 1440px){
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@mixin social-label{
+  @include fifth-title($white);
+  font-weight: 500;
+  @media(min-width: 1440px){
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+
+
+@mixin medium-title{
+  @include medium-text;
+  font-weight: 600;;
+}
+
+
+@mixin main-text($color: $grey) {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: $color;
+
+  @media(min-width: 768px){
+    font-size: 16px;
+  }
+
+  @media(min-width: 1440px){
+    font-size: 18px;
+    line-height: 140%;
+  }
+}
+
+@mixin secondary-text($color: $grey) {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: $color;
+
+  @media(min-width: 1440px){
+    font-size: 18px;
+    line-height: 140%;
+  }
+} 
+
+@mixin third-text($color: $white){
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: $color;
+
+  @media(min-width: 1440px){
+    font-size: 18px;
+    line-height: 140%;  
+  }
+}
+
+@mixin ps-text($color: $grey){
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: $color;
+  @media(min-width: 768px){
+    font-size: 14px;
+    line-height: 17px;
+  } 
+}
+
+@mixin fourth-text($color: $darkGrey){
+  @include third-text($color);
+
+  @media(min-width: 1440px){
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+}
+
+@mixin light-text($color: $white){
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $white;
+
+  @media(min-width: 1440px){
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@mixin medium-text(){
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $white;
+}
+
+@mixin form-g-title{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: $darkGrey;
+
+  @media(min-width: 1440px){
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@mixin button-filled {
+  text-align: center;
+  cursor: pointer;
+  padding: 16px 8px;
+  display: flex;
+  justify-content: center;
+  background: $vinous;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: $white;
+  border-radius: 51px;
+  box-shadow: 0px 4px 12px rgba(98, 31, 42, 0.2);
+  transition: all 300ms ease-out;
+  &:disabled{
+    background: $darkGrey !important;
+  }
+
+  &:hover{
+    background: $lightVinous;
+  }
+  &:active{
+    background: $vinous;
+    box-shadow: 4px 4px 10px rgba(98, 31, 42, 0.15), 0px 4px 12px rgba(98, 31, 42, 0.2), inset -6px -6px 8px rgba(98, 31, 42, 0.1);
+  }
+
+  @media(min-width: 1440px){
+    font-size: 18px;
+    line-height: 22px;
+    padding: 20px 12px;
+  }
+}
+
+
+@mixin button-outlined  {
+  @include button-filled;
+  background: transparent;
+  border: 2px solid $vinous;
+  color: $vinous;
+  filter: drop-shadow(0px 4px 12px rgba(98, 31, 42, 0.2));
+  &:hover{
+    box-shadow: 0px 4px 8px rgba(98, 31, 42, 0.1);
+    color: white;
+    border-color: $lightVinous;
+  }
+  &:active{
+    box-shadow: 4px 4px 10px rgba(98, 31, 42, 0.15), 0px 4px 12px rgba(98, 31, 42, 0.2), inset -6px -6px 8px rgba(98, 31, 42, 0.1);
+  }
+
+}
+
+@mixin button-outlined-d {
+  @include button-filled;
+  @media(min-width: 1440px){
+    @include button-outlined;
+  }
+}
+
+@mixin button-filled-small {
+  @include button-filled;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 12px 32px !important;
+  @media(min-width: 1440px){
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@mixin link-with-pointer {
+  text-decoration: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: $vinous;
+  position: relative;
+  display: block;
+  width: fit-content;
+  padding-bottom: 1.5px;
+  &::after{
+    content: '';
+    position: absolute;
+    right: -36px;
+    background: url(../../images/icons/pointer.svg);
+    width: 24px;
+    height: 13px;
+    top: 2px;
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    left: 0;
+    width: 0px;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out, width 400ms ease-in-out;
+    background: $vinous;
+
+  }
+
+  &:hover {
+    &::before{
+      width: 42px;
+      opacity: 1;
+    }
+  }
+
+
+  @media(min-width: 768px){
+    font-size: 16px;
+    line-height: 20px;
+    padding-bottom: 2px;
+    &::after{
+      top: 3.5px;
+    }
+    &:hover {
+      &::before{
+        width: 48px;
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 3px;
+    &::after{
+      right: -55px;
+      width: 30px;
+      height: 15.4px;
+      background-size: 30px 15.4px;
+      top: 2.85px;
+    }
+    &:hover {
+      &::before{
+        width: 55px;
+      }
+    }
+  }
+}

@@ -1,0 +1,283 @@
+.calc {
+  @include standart-section-spacing;
+
+  &__wrapper {
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    @include secondary-title;
+  }
+
+  &__description {
+    @include item-spacing(10px);
+    @include fourth-text;
+  }
+
+  &__form-wrapper {
+    margin-top: 40px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+
+  }
+
+  &__picture {
+    border-radius:  12px 12px 0 0;
+    height: 210px;
+    background: url(../../images/calc-m.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    @supports (gap: 1px) {
+    background: url(../../images/calc-m.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+  }
+
+  &__form {
+    padding: 40px 20px;
+    &__group{
+      margin-bottom: 40px;
+
+      &:last-of-type {
+        margin-bottom:60px;
+      }
+      &__title{
+        @include form-g-title;
+        margin-bottom: 20px;
+      }
+    }
+    &__submit{
+      @include button-filled;
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+      text-align: center
+    }
+    &__contact{
+      @include button-outlined;
+    }
+  }
+
+  &__input {
+
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    &--off{
+      display: none;
+    }
+    
+    &__label{
+      display: flex;
+      align-items: center;
+      @include third-title;
+      span {
+        color: $grey;
+        font-weight: 400;
+
+      }
+      &:hover span{
+        color: $darkGrey;
+      }
+    }
+    &__radio{
+      display: none;
+      &:checked ~ span{
+        font-weight: 600;
+        color: $vinous;
+      }
+      &:checked ~ .calc__input__radio-custom{
+        border: 6px solid $vinous !important;
+      }
+    }
+    &:hover & {
+      &__radio-custom{
+        border-color: $darkGrey;
+      }
+    }
+    &__radio-custom {
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+      background: $white;
+      border-radius: 50%;
+      border: 2px solid $grey
+    }
+
+  }
+
+  @media(min-width: 768px){
+    &__wrapper{
+      margin: 0 auto;
+    }
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__description{
+      margin-bottom: 15px;
+    }
+
+    &__picture{
+      height: 260px;
+      background: url(../../images/calc-t.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url(../../images/calc-t.webp) no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    }
+
+    &__form{
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &__group{
+        margin-bottom: 0;
+        &:last-of-type{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-bottom: 40px;
+        }
+        &:last-of-type &{
+          &__title{
+            width: 100%;
+          }
+        }
+      }
+      &__submit{
+        width: 48.35%;
+        margin-bottom: 0;
+      }
+  
+      &__contact{
+        width: 48.35%;
+      }
+    
+    }
+    &__input{
+      &:last-of-type
+       {
+        margin-bottom: 0;
+       }
+    }
+    &__form-wrapper{
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+    }
+
+  }
+
+
+  @media(min-width: 1920px){
+    &__wrapper{
+      margin: 0 auto;
+    }
+    &__title{
+      margin-bottom: 80px;
+    }
+    &__description{
+      margin-top: 15px;
+    }
+    &__form-wrapper{
+      margin-top: 80px;
+      display: flex;
+      box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 40px;
+    }
+
+    &__form{
+      padding: 60px;
+      width: 78.18%;
+      &__group{
+        width: 43.84%;
+        &:first-of-type{
+          margin-bottom: 60px;
+        }
+        &:last-of-type{
+          width: 43.84%;
+          display: block;
+        }
+        &:nth-child(3){
+          order: 4;
+        }
+        &__title{
+          margin-bottom: 40px;
+        }
+      }
+      &__submit{
+        width: 46.65%;
+        order: 5;
+      }
+      &__contact{
+        width: 46.65%;
+        order: 6;
+      }
+    }
+
+    
+    
+
+    &__picture{
+      width: 28.2%;
+      min-height: 668px;
+      background: url(../../images/calc-d.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 40px 0 0 40px;
+      @supports (gap: 1px) {
+      background: url(../../images/calc-d.webp) no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    }
+  }
+  
+
+  @media(min-width: 1920px){
+    &__picture{
+      width: 27.77%;
+      min-height: 540px;
+    }
+
+    &__form{
+      width: 72.22%;
+      justify-content: start;
+
+      &__group{
+        margin-right: 80px;
+        width: fit-content;
+        &:nth-child(3){
+          margin-right: 0;
+          order: 3;
+        }
+        &:nth-child(4){
+          width: 100%;
+          order: 4;
+          display: flex;
+          justify-content: flex-start;
+          &>div{
+            @include item-spacing-gor(40px);
+          }
+        }
+      }
+
+      &__submit, &__contact{
+        width: 298px;
+      }
+      &__submit{
+        margin-right: 40px;
+      }
+
+    }
+    &__wrapper{
+    }
+  }
+
+}
+

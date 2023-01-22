@@ -1,0 +1,39 @@
+.page{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  &__body{
+    font-family: 'Montserrat','Posterama Text', sans-serif;
+    background: $bgWhite;
+    a.anchor {
+      display: block;
+      position: relative;
+      top: -100px;
+      visibility: hidden;
+      @media(min-width: 1920px){
+        top: -150px;
+      }
+
+  }
+
+  
+  .faq{
+    margin-top: 0;
+  }
+  }
+
+
+
+
+  .no-scroll-y {
+    @media(min-width: 1440px){
+      .widgets {
+        right: 36.5px
+      }
+    }
+  }
+  &.no-scroll-y{
+    @media(min-width: 1440px){
+      padding-right: 16.5px;
+    }
+  }
+}

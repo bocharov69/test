@@ -1,0 +1,125 @@
+.dealer {
+  @include standart-section-spacing;
+
+  &__wrapper {
+  }
+
+  &__title {
+    @include secondary-title;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    height: fit-content;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      border: 1px solid $grey;
+      top: 0;
+      left: 0;
+    }
+    img {
+      width: 100%;
+      transform: scaleY(1.03) translateY(2px);
+    }
+  }
+
+  .slider {
+
+    padding: 0 30px;
+
+
+    &__container {
+    }
+  
+    &__wrapper {
+      padding-bottom: 3px;
+    }
+  
+    &__items {
+    }
+
+    &__control {
+      height: 100%;
+      width: 10px;
+      background: url(../../images/icons/slider-next-grey.svg) no-repeat;
+      background-position: 0px 50%;
+      background-size: 10px 40px;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg);
+      &[data-slide="next"]{
+        transform: rotateY(0deg);
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  @media(min-width: 768px){
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__item{
+      &::after{
+        content: normal;
+      }
+    }
+    .slider{
+      padding: 0 40px;
+      &__item{
+        padding: 0 10px;
+        width: 33.33%;
+        flex: 0 0 33.33%;
+      }
+      &__control{
+        width: 20px;
+        background-size: 20px 80px;
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__wrapper{
+      margin: 0 auto;
+    }
+
+    &__title{
+      margin-bottom: 80px;
+    }
+
+    .slider{
+      padding: 0 ;
+      padding: 0 100px;
+      &__item{
+        padding: 0 20px;
+      }
+      &__control{
+        background: url(../../images/icons/slider-next-grey-d.svg) no-repeat;
+        width: 80px;
+        background-size: 40px 92px;
+        background-position: 20px 50%;
+      }
+    }
+  }
+
+  @media(min-width: 1920px){
+
+    .slider{
+      padding: 0 100px;
+      &__item{
+        width: 20%;
+        flex: 0 0 20%;
+      }
+    }
+  }
+  
+}
+

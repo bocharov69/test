@@ -1,0 +1,500 @@
+.calc-modal {
+  position: fixed;
+  overflow-y: scroll;
+  height: 100vh;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: none;
+  background: rgba(black, 0.25);
+  
+  &--opened {
+    display: block;
+  }
+  &__share{
+    display: none;
+  }
+
+  &__wrapper {
+    position: relative;
+    min-height: 100vh;
+    &--1{
+      background: url(../../images/m-1-m.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url(../../images/m-1-m.webp) no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    }
+    &--2{
+      background: url(../../images/m-2-m.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url(../../images/m-2-m.webp) no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    }
+    &--3{
+      background: url(../../images/m-3-m.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url(../../images/m-3-m.webp) no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    }
+    &--4{
+      background: url(../../images/m-4-m.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url(../../images/m-4-m.webp) no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    }
+    width: 100vw;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  
+  &__body{
+    padding: 40px 20px;
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    background: url(../../images/icons/c-c-m.svg) no-repeat;
+  }
+
+
+  &__title {
+    @include secondary-title;
+    font-size: 22px;
+    line-height: 22px;
+    color: $white;
+    margin-bottom: 40px;
+  }
+  .cases__panel{
+    background: rgba(55, 62, 70, 0.6);
+    backdrop-filter: blur(2px);
+    &__wrapper{
+      padding: 0;
+      margin: 0 !important;
+    }
+    &__title{
+      color: $white;
+    }
+    &__description{
+      color: $white;
+    }
+    &__ps{
+      color: $white;
+    }
+  }
+  &__actions{
+    margin-top: 40px;
+    li{
+      &:nth-child(1){
+        a, button{
+          border-radius: 12px 12px 0 0;
+        }
+      }
+
+      &:nth-child(2){
+        a, button{
+          border-bottom: none;
+          border-top: none;
+          &:hover{
+            svg path{
+              stroke: $vinous;
+              fill: none;
+            }
+          }
+        }
+      }
+
+      &:nth-child(3){
+        a, button{
+          margin-bottom: 20px;
+          border-radius: 0 0 12px 12px;
+        }
+      }
+      &:nth-child(4){
+        a, button{
+          background: transparent;
+          border: none;
+          &:hover{
+            background: transparent;
+            color: $white;
+          }
+        }
+      }
+    }
+    &__item{
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background: $vinous;
+      justify-content: center;
+      border: 1px solid $lineGrey;
+      @include main-text($white);
+      font-weight: 500;
+      cursor: pointer;
+      &:hover{
+        background: $white;
+        color: $vinous;
+        svg path{
+          fill: $vinous;
+        }
+      }
+      svg{
+        margin-right: 12px;
+      }
+    }
+  }
+
+  @media(min-width: 768px){
+    &__close {
+      width: 32px;
+      height: 32px;
+      background: url(../../images/icons/c-c-t.svg) no-repeat;
+    }
+    &__title{
+      br{
+        display: none;
+      }
+    }
+    &__wrapper{
+      &--1{
+        background: url(../../images/m-1-t.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-1-t.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &--2{
+        background: url(../../images/m-2-t.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-2-t.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &--3{
+        background: url(../../images/m-3-t.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-3-t.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &--4{
+        background: url(../../images/m-4-t.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-4-t.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+    }
+    &__body{
+      min-height: 100vh;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    &__actions{
+      display: flex;
+      height: 64px;
+      align-items: center;
+      justify-content: stretch;
+      margin: 0 auto;
+      margin-top: 80px;
+      li{
+        background: $vinous;
+        &:nth-child(1){
+          border-radius: 12px 0 0 12px;
+        }
+        &:nth-child(4){
+          border-radius: 0 12px 12px 0;
+          a, button{
+            background: $vinous;
+          }
+          &:hover{
+            a, button{
+  
+              color: $vinous;
+              background: $white;
+              border-radius: 12px !important;
+              svg path{
+                stroke: $vinous;
+              }
+            }
+          }
+        }
+      }
+      &__item{
+        border-radius: 12px !important;
+        border: none !important;
+        margin-bottom: 0 !important;
+        padding: 20px 8px;
+      }
+    }
+  }
+  @media(min-width: 1024px){
+    #calc-modal-share{
+      position: relative;
+    }
+
+    &__share {
+      display: none !important;
+     &__body{
+      position: absolute !important;
+      margin: 0 !important;
+      list-style: none !important;
+      border: 1px solid rgba(0, 0, 0, 0.15) !important;
+      box-shadow: 0.5px 0.866px 7px 0px #464646 !important;
+      position: absolute !important;
+      padding: 20px 15px !important;
+      z-index: 100 !important;
+      right: 156px !important;
+      bottom: 99px !important;
+      min-width: 290px !important;
+      border-radius: 0 !important;
+      margin-top: -5px !important;
+      width: 200px !important;
+      text-align: left !important;
+      background-color: #fff !important;
+
+     }
+     #calc-modal-share-notification{
+       color: green;
+     }
+      &--opened{
+        display: block !important;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+   
+
+
+      &__title{
+        font-size: 15px !important;
+        color: #797979 !important;
+        margin-bottom: 5px !important;
+      }
+
+      &__socials{
+        span{
+          display: block !important;
+        }
+        display: flex !important;
+        a, li{
+          background: transparent !important;
+        }
+        .ya-share2__badge {
+          border-radius: 4px;
+          color: #fff;
+          overflow: hidden;
+          position: relative;
+      }
+        li{
+          flex: 0 0 auto !important;
+        }
+        .ya-share2__item_service_vkontakte .ya-share2__badge, .ya-share2__item_service_vkontakte .ya-share2__mobile-popup-badge {
+          background-color: #07f;
+      }
+      .ya-share2__item_service_vkontakte .ya-share2__icon {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.878 17.304c-5.411 0-8.695-3.755-8.823-9.994h2.74c.086 4.583 2.171 6.528 3.77 6.925V7.31h2.627v3.954c1.542-.17 3.155-1.97 3.698-3.954h2.584c-.414 2.441-2.17 4.24-3.412 4.983 1.242.6 3.24 2.17 4.011 5.01h-2.84c-.6-1.898-2.07-3.369-4.04-3.569v3.57h-.315Z' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    .ya-share2__badge .ya-share2__icon {
+      height: 30px;
+      width: 30px;
+      background-size: 30px 30px;
+  }
+
+  .ya-share2__item_service_odnoklassniki .ya-share2__badge, .ya-share2__item_service_odnoklassniki .ya-share2__mobile-popup-badge {
+    background-color: #eb722e;
+}
+
+.ya-share2__item_service_odnoklassniki .ya-share2__icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.674 6.536a1.69 1.69 0 00-1.688 1.688c0 .93.757 1.687 1.688 1.687a1.69 1.69 0 001.688-1.687 1.69 1.69 0 00-1.688-1.688zm0 5.763a4.08 4.08 0 01-4.076-4.075 4.08 4.08 0 014.076-4.077 4.08 4.08 0 014.077 4.077 4.08 4.08 0 01-4.077 4.075zm-1.649 3.325a7.633 7.633 0 01-2.367-.98 1.194 1.194 0 011.272-2.022 5.175 5.175 0 005.489 0 1.194 1.194 0 111.272 2.022 7.647 7.647 0 01-2.367.98l2.279 2.28a1.194 1.194 0 01-1.69 1.688l-2.238-2.24-2.24 2.24a1.193 1.193 0 11-1.689-1.689l2.279-2.279' fill='%23FFF' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.ya-share2__item_service_telegram .ya-share2__badge, .ya-share2__item_service_telegram .ya-share2__mobile-popup-badge {
+  background-color: #64a9dc;
+}
+
+.ya-share2__item_service_telegram .ya-share2__icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.92 6.089L4.747 11.555c-.967.388-.962.928-.176 1.168l3.534 1.104 1.353 4.146c.164.454.083.634.56.634.368 0 .53-.168.736-.368.13-.127.903-.88 1.767-1.719l3.677 2.717c.676.373 1.165.18 1.333-.628l2.414-11.374c.247-.99-.378-1.44-1.025-1.146zM8.66 13.573l7.967-5.026c.398-.242.763-.112.463.154l-6.822 6.155-.265 2.833-1.343-4.116z' fill='%23FFF' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.ya-share2__item_service_twitter .ya-share2__badge, .ya-share2__item_service_twitter .ya-share2__mobile-popup-badge {
+  background-color: #00aced;
+}
+
+.ya-share2__item_service_twitter .ya-share2__icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 7.539a6.56 6.56 0 01-1.885.517 3.294 3.294 0 001.443-1.816 6.575 6.575 0 01-2.085.796 3.283 3.283 0 00-5.593 2.994A9.32 9.32 0 015.114 6.6a3.28 3.28 0 001.016 4.382 3.274 3.274 0 01-1.487-.41v.041a3.285 3.285 0 002.633 3.218 3.305 3.305 0 01-1.482.056 3.286 3.286 0 003.066 2.28A6.585 6.585 0 014 17.524 9.291 9.291 0 009.032 19c6.038 0 9.34-5 9.34-9.337 0-.143-.004-.285-.01-.425A6.672 6.672 0 0020 7.538z' fill='%23FFF' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.ya-share2__item_service_whatsapp .ya-share2__badge, .ya-share2__item_service_whatsapp .ya-share2__mobile-popup-badge {
+  background-color: #65bc54;
+}
+
+.ya-share2__item_service_whatsapp .ya-share2__icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 11.794c0 4.304-3.517 7.794-7.855 7.794a7.87 7.87 0 01-3.796-.97L4 20l1.418-4.182a7.714 7.714 0 01-1.127-4.024C4.29 7.489 7.807 4 12.145 4S20 7.49 20 11.794zm-7.855-6.553c-3.641 0-6.603 2.94-6.603 6.553A6.48 6.48 0 006.8 15.636l-.825 2.433 2.537-.806a6.6 6.6 0 003.633 1.084c3.642 0 6.604-2.94 6.604-6.553s-2.962-6.553-6.604-6.553zm3.967 8.348c-.049-.08-.177-.128-.37-.223-.192-.095-1.139-.558-1.315-.621-.177-.064-.305-.096-.434.095a10.92 10.92 0 01-.61.749c-.112.128-.224.143-.416.048-.193-.096-.813-.297-1.549-.948a5.76 5.76 0 01-1.07-1.323c-.113-.191-.013-.295.084-.39.086-.086.192-.223.289-.334.096-.112.128-.191.192-.319s.032-.239-.016-.335c-.048-.095-.433-1.035-.594-1.418-.16-.382-.32-.318-.433-.318-.112 0-.24-.016-.369-.016a.71.71 0 00-.513.239c-.177.19-.674.653-.674 1.593s.69 1.848.786 1.976c.096.127 1.332 2.119 3.289 2.884 1.958.764 1.958.51 2.31.477.353-.031 1.14-.461 1.3-.908.16-.446.16-.829.113-.908z' fill='%23FFF' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+
+
+        li {
+          @include item-spacing-gor(5px);
+          .ya-share2__title{
+            @include visually-hidden;
+          }
+        }
+      }
+      &__copy {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        &__input {
+          height: 30px !important;
+          width: 220px !important;
+          padding: 5px 10px !important;
+          border-radius: 6px !important;
+          border: 1px solid #959595 !important;
+          font-size: 15px !important;
+          color: #797979 !important;
+        }
+        &__button{
+          width: 30px !important;
+          height: 30px !important;
+          border: none !important;
+          background-color: transparent !important;
+          background: url(../../../images/icons/copy-icon.png) !important;
+          background-position: center !important;
+          background-repeat: no-repeat !important;
+          cursor: pointer !important;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__close {
+      width: 48px;
+      height: 48px;
+      right: 50px;
+      top: 40px;
+      background: url(../../images/icons/c-c-d.svg) no-repeat;
+    }
+    &__wrapper{
+      &--1{
+        background: url(../../images/m-1.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-1.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &--2{
+        background: url(../../images/m-2.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-2.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &--3{
+        background: url(../../images/m-3.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-3.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &--4{
+        background: url(../../images/m-4.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-4.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+    }
+    &__body{
+      padding: 60px 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    &__actions{
+      width: 1000px;
+      li{
+        flex: 0 0 24%;
+        &:nth-child(1){
+          border-radius: 20px 0 0 20px;
+        }
+        &:nth-child(2){
+          flex: 0 0 27%;
+        }
+        &:nth-child(4){
+          border-radius: 0 20px 20px 0;
+        }
+      }
+      &__item{
+        border-radius: 20px !important;
+        svg{
+          margin-right: 17px;
+        }
+      }
+    }
+  }
+  @media(min-width: 1920px){
+    &__body{
+      max-width: 1440px;
+    }
+    &__actions{
+      width: 1160px;
+      &__item{
+
+      }
+    }
+  }
+}

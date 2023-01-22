@@ -1,0 +1,180 @@
+.footer {
+  background: $darkGrey;
+
+
+  &__wrapper {
+    padding: 40px 20px;
+  }
+  &__title{
+    @include medium-title;
+    margin-bottom: 20px;
+  }
+
+  &__contact {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba($white, 0.5);
+    margin-bottom: 40px;
+    &__link{
+      @include medium-text;
+      margin-bottom: 20px;
+      text-align: center;
+      display: block;
+    }
+    &__button{
+      @include button-filled;
+      margin-bottom: 12px;
+    }
+    &__socials{
+      display: flex;
+      justify-content: space-between;
+      &__link {
+        @include social-label;
+        display: flex;
+        align-items: center;
+        svg{
+          margin-right: 13px;
+          path {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+    &__list{
+      &__item {
+        @include item-spacing(12px);
+        @include light-text;
+        &:hover{
+          color: rgba($white, 0.3);
+        }
+      }
+    }
+  }
+
+  &__title {
+  }
+
+  &__shops {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba($white, 0.5);
+    &__list{
+      &__item{
+        padding-left: 30px;
+        @include light-text;
+        @include item-spacing(20px);
+        position: relative;
+        &::before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 18px;
+          height: 18px;
+          background: url(../../images/icons/location.svg) no-repeat;
+          
+        }
+      }
+    }
+  }
+
+  &__additional {
+    display: none;
+    &--mobile{
+      display: block;
+    }
+    &__list{
+      &__item{
+        @include item-spacing(10px);
+        @include light-text;
+        color: rgba($white, 0.5);
+
+      }
+    }
+    
+  }
+
+  @media(min-width: 768px){
+    &__wrapper{
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__additional{
+      &--mobile{
+        display: none;
+      }
+      display: block;
+    }
+    &__contact{
+      width: 41.17%;
+      border-bottom: none;
+      padding-bottom: 0;
+      &__socials{
+        margin: 20px 0;
+      }
+    }
+    &__nav{
+      order: -1;
+    }
+    &__shops{
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      padding-top: 40px;
+      border-top: 1px solid rgba($white, 0.5);
+      &__list{
+        display: flex;
+        justify-content: space-between;
+        &__item{
+          margin-bottom: 0;
+          flex: 0 0 28%;
+          &:nth-child(1) {
+            flex: 0 0 35%;
+          }
+          &:nth-child(2){
+            flex: 0 0 30%;
+          }
+          @include item-spacing-gor(20px);
+          br{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__wrapper{
+      margin: 0 auto; 
+      padding: 40px 0;
+    }
+    &__shops{
+      width: 36%;
+      padding-top: 0;
+      border-top: none;
+      &__list{
+        display: block;
+        &__item{
+          margin-right: 0;
+          @include item-spacing(20px);
+        }
+      }
+    }
+    &__nav{
+      width: 21.6%;
+    }
+    &__contact{
+      width: 27%;
+      order: 4;
+      &__button{
+        @include button-filled-small;
+      }
+    }
+  }
+}

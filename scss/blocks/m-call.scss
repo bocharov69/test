@@ -1,0 +1,268 @@
+.m-call {
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 21;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  background: rgba(black, 0.25);
+  &--opened {
+    display: block;
+  }
+  .ntf{
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  &__success{
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__image{
+      width: 32px;
+      height: 32px;
+      margin-bottom: 20px;
+    }
+    &__info{
+      @include title-success-form;
+      width: 100%;
+    }
+  }
+  &__wrapper {
+    left: 50%;
+    top: 80px;
+    transform: translateX((-50%));
+    margin-bottom: 120px;
+    background: #FBFBFB;
+    box-shadow: 0px 2px 8px rgba(55, 62, 70, 0.15);
+    border-radius: 20px; 
+    padding: 40px;
+    position: relative;
+    width: calc(100% - 40px);
+  }
+
+  &__close{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: url(../../images/icons/m-call-cr.svg) no-repeat;
+    background-size: 16px 16px;
+    background-position: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__title{
+    @include third-title-big;
+    color: $darkGrey;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+
+  &__form {
+    &__group{
+      margin-bottom: 12px;
+      &__title {
+        @include secondary-text($darkGrey);
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      &__input{
+        width: 100%;
+        padding: 12px;
+        background: #FBFBFB;
+        border: 1px solid rgba($grey, 0.8);
+        box-shadow: 0px 4px 4px rgba($darkGrey, 0.1);
+        border-radius: 8px;
+        caret-color: black;
+        @include secondary-text;
+        &:hover{
+          border: 1px solid $grey;
+        }
+        &:focus{
+          border: 1px solid $darkGrey;
+          box-shadow: 0px 0px 4px rgba(55, 62, 70, 0.15), 0px 4px 4px rgba(55, 62, 70, 0.1);
+        }
+      }
+      .input-number{
+        padding-left: 58px;
+      }
+
+      .input-number-wrap {
+        display: block;
+        position: relative;
+        &::before{
+          content: '';
+          position: absolute;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          top: 12px;
+          left: 12px;
+          background: url(../../images/icons/russia.svg) no-repeat;
+          display: block;
+        }
+        &::after{
+          content: '+7';
+          position: absolute;
+          top: 13px;
+          left: 34px;
+          @include secondary-text(black);
+        }
+      }
+    }
+
+
+    &__options{
+      margin: 40px 0;
+      &__item{
+        cursor: pointer;
+        padding: 12.31px 20.5px;
+        border-radius: 12px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include secondary-text;
+        color: $vinous;
+        svg path{
+          fill: $vinous
+        }
+        svg {
+          margin-right: 12px;
+          width: 20px;
+          height: 20px;
+        }
+        span.desctop{
+          display: none;
+        }
+        
+
+        &:hover{
+          color: $white;
+          background: $lightVinous;
+          svg path {
+            fill: $white;
+          }
+        }
+        &--active{
+          font-weight: 600;
+          color: $white;
+          background: $vinous;
+          svg path {
+            fill: $white;
+          }
+        }
+
+      }
+    }
+    &__submit{
+      @include button-filled;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    &__ps{
+      @include ps-text;
+      font-weight: 500;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  @media(min-width: 768px){
+    &__success{
+      &__image{
+        width: 48px;
+        height: 48px;
+      }
+    }
+    &__wrapper{
+      width: 400px;
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__success{
+      &__image{
+        width: 64px;
+        height: 64px;
+      }
+    }
+    &__wrapper{
+      width: 590px;
+    }
+    &__close{
+      width: 32px;
+      height: 32px;
+      background-size: 21.33px 21.33px;
+    }
+    &__form{
+      &__submit {
+        margin-bottom: 20px;
+      }
+      &__group{
+        &__input{
+          padding: 20px;
+        }
+        .input-number{
+          padding-left: 73px;
+        }
+        .input-number-wrap{
+          &::before{
+            top: 23px;
+            left: 20px;
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+          }
+          &::after{
+            top: 21px;
+            left: 44px;
+          }
+        }
+      }
+
+      &__options{
+        display: flex;
+        border-radius: 20px;
+        outline: 1px solid $vinous;
+        overflow: hidden;
+        &__item{
+          width: 33.333%;
+          border-radius: 0;
+          height: 72px;
+          svg {
+            width: 26px;
+            height: 26px;
+          }
+          span{
+            display: none;
+          }
+          span.desctop{
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1920px){
+    &__wrapper{
+      top: 180px;
+    }
+  }
+}
+
+.call-requested{
+  .m-call__success{
+    display: flex;
+  }
+  .m-call__title, .m-call__form{
+    display: none;
+  }
+}
+

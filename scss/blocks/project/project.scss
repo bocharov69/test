@@ -1,0 +1,239 @@
+@import './ball.scss';
+
+.project {
+  @include standart-section-spacing;
+
+  &__wrapper {
+  }
+
+  &__title {
+    @include secondary-title;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    &__item{
+      margin-bottom: 40px;
+
+      &:nth-child(1) {
+        .project__ball{
+          bottom: 48px;
+          left: 87px;
+        }
+      }
+      &:nth-child(2) {
+        .project__ball{
+          bottom: 108px;
+          left: 110px;
+          &:after{
+            animation-delay: 200ms;
+          }
+        }
+      }
+      &:nth-child(3) {
+        .project__ball{
+          bottom: 123px;
+          left: 33px;
+          &::after{
+            animation-delay: 200ms;
+          }
+        }
+      }
+      &__picture{
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+        cursor: pointer;
+        &::after{
+          content: ' ';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: block;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          opacity:0;
+          transition: opacity ease-out 300ms;
+          background: rgba($darkGrey, 0.5);
+        }
+        &:hover{
+          &::after{
+            opacity: 1;
+          }
+        }
+
+        &__wrapper{
+          position: relative;
+          max-width: 350px;
+          margin: 0 auto;
+          &::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: -10px;
+            border-radius: 20px;
+            background: $vinous;
+          }
+
+        }
+        img{
+          width: 100%;
+          transform: scaleY(1.025);
+          transition: transform ease-out 300ms;
+          position: relative;
+
+          &:hover{
+            transform: scale(1.17);
+          }
+        }
+      }
+      &__title{
+        @include third-title-big;
+        margin: 30px 0 20px;
+      }
+      &__description{
+        @include secondary-text;
+        margin-bottom: 20px;
+      }
+      &__link{
+        @include link-with-pointer;
+      }
+    }
+  }
+
+  &__ball {
+    @include ball;
+    pointer-events: none;
+    position: absolute;
+    z-index: 3;
+  }
+
+
+
+  &__button {
+    @include button-filled;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  @media(min-width: 768px){
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__list{
+      display: flex;
+      justify-content: space-between;
+      &__item{
+        width: 31.39%;
+        margin-bottom: 60px;
+
+        &__picture{
+          &__wrapper {
+            max-width: fit-content;
+          }
+        }
+
+        &__title{
+          margin: 30px 0 20px;
+
+        }
+
+
+
+
+        &:nth-child(1) {
+          .project__ball{
+            bottom: 39px;
+            left: 62px;
+          }
+        }
+        &:nth-child(2) {
+          .project__ball{
+            bottom: 86px;
+            left: 83px;
+          }
+        }
+        &:nth-child(3) {
+          .project__ball{
+            bottom: 110px;
+            left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+
+  @media(min-width: 1440px){
+    &__wrapper{
+      margin: 0 auto;
+    }
+
+    &__title{
+      margin-bottom: 80px;
+    }
+
+    &__list{
+      // background: url(../../../images/bg-lines.svg) no-repeat;
+      background-position-x: -0.5px;
+      &__item{
+        padding:0 !important;
+        width: 30.6%;
+        margin-bottom: 80px;
+        &:nth-child(1) {
+          .project__ball{
+            bottom: 73px;
+            left: 100px;
+          }
+        }
+        &:nth-child(2) {
+          .project__ball{
+            bottom: 119px;
+            left: 123px;
+          }
+        }
+        &:nth-child(3) {
+          .project__ball{
+            bottom: 139px;
+            left: 33px;
+          }
+        }
+        &__picture{
+          &__wrapper{
+            &::after{
+              right: -10px;
+            }
+          }
+        }
+
+        &__title{
+          margin-top: 50px;
+        }
+      }
+    }
+    &__button{
+      @include button-outlined;
+    }
+  }
+
+
+  @media(min-width: 1920px){
+
+    &__list{
+      // background: url(../../../images/bg-lines-2.svg) no-repeat;
+      // background-position-x: -1px;
+      &__item{
+        padding: 105px 0 156px;
+        width: 28.47%;
+        &__description, &__title, &__link{
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}

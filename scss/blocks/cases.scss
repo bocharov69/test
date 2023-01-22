@@ -1,0 +1,599 @@
+.cases {
+
+  @include standart-section-spacing;
+
+  &__wrapper {
+  }
+
+  &__item {
+    height: 400px;
+    
+    &__content{
+      display: none;
+    }
+  }
+
+  &__title {
+    @include secondary-title;
+    margin-bottom: 40px;
+  }
+
+  &__panel {
+    margin-top: 40px;
+    padding: 20px;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    &__wrapper{
+      padding: 0 20px;
+    }
+    &__title{
+      @include fourth-title($darkGrey);
+      margin-bottom: 40px;
+
+    }
+    &__description{
+      @include third-title;
+      font-weight: 500;
+      margin-bottom: 12px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-weight: 400;
+        text-align: right;
+        width: 50%;
+      }
+    }
+    &__ps{
+      @include ps-text;
+      margin-top: 20px;
+    }
+  }
+
+  .slider {
+    height: 400px;
+
+    &::before{
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 40px;
+      height: 100%;
+      display: block;
+      background: linear-gradient(90deg, rgba(55, 62, 70, 0.5) 0%, rgba(55, 62, 70, 0) 100%);
+      border-radius: 20px 0px 0px 20px;
+    }
+    &::after{
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top:0;
+      right: 0;
+      width: 40px;
+      height: 100%;
+      display: block;
+      background: linear-gradient(270deg, rgba(55, 62, 70, 0.5) 0%, rgba(55, 62, 70, 0) 100%);
+      border-radius: 0  20px 20px 0;
+    }
+
+    &__container, &__wrapper, &__items, &__item{
+      height: 100%;
+      transform: none !important;
+      width: 100%;
+    }
+
+    &__item{
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 450ms ease-in;
+      &_active{
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
+    &__container {
+    }
+  
+    &__wrapper {
+      position: relative;
+    }
+  
+    &__items {
+      transition: none;
+    }
+  
+    &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      &:nth-child(1){
+        background: url(../../images/m-1-m.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-1-m.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+      &:nth-child(2){
+        &>div{
+        background: url(../../images/m-2-m.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-2-m.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(3){
+        &>div{
+        background: url(../../images/m-3-m.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-3-m.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(4){
+        &>div{
+        background: url(../../images/m-4-m.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/m-4-m.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(5){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-s-ostrovkov-ulitsa-kompozit.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-s-ostrovkov-ulitsa-kompozit.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(6){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-p-obraznaya-ulitsa-kompozit.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-p-obraznaya-ulitsa-kompozit.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(7){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-p-obraznaya-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-p-obraznaya-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(8){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-s-ostrovkov-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-s-ostrovkov-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(9){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-s-ostrovkov-dom-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-s-ostrovkov-dom-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(10){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-dom-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-dom-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(11){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-pryamaya-dom-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-pryamaya-dom-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(12){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-pryamaya-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-pryamaya-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(13){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-dom-kompozit.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-dom-kompozit.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(14){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-p-obraznaya-dom-kompozit.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-p-obraznaya-dom-kompozit.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(15){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-pryamaya-ulitsa-kompozit.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-pryamaya-ulitsa-kompozit.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(16){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-ulitsa-kompozit.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-ulitsa-kompozit.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &:nth-child(17){
+        &>div{
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-stal.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/calc-modal-bgs/grill-kuhnya-uglovaya-stal.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+        }
+      }
+      &_active {
+      }
+    }
+  
+    &__control {
+      height: 100%;
+      width: 40px;
+      background: url(../../images/icons/slider-next.svg) no-repeat;
+      background-position: 10px 140px;
+      background-size: 20px 120px;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg);
+      &[data-slide="next"]{
+        transform: rotateY(0deg);
+        left: unset;
+        right: 0;
+      }
+    }
+  
+    &__indicators {
+      bottom: 20px;
+      left: calc(50% - 52px);
+      display: flex;
+      width: 104px;
+
+      left: calc(50% - 150px);
+      display: flex;
+      width: 300px;
+
+      justify-content: space-between;
+      margin: 0;
+      li {
+        @include item-spacing-gor(4px);
+
+        width: 20px;
+        height: 2px;
+        background-color: rgba($white, .3);
+        cursor: pointer;
+        &:hover{
+          background-color: rgba($white, .5);
+        }
+      }
+      li.active{
+        background: $white;
+      }
+    }
+  }
+
+  @media(min-width: 768px){
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__wrapper{
+      position: relative;
+      height: 694px;
+    }
+    &__item{
+      &__content{
+        display: none;
+      }
+      height: 598px;
+    }
+    &__panel{
+      margin: 0 auto;
+      &__wrapper{
+        padding: 0;
+        margin: 0 auto;
+        margin-top: -482px;
+      }
+      &__description{
+        margin-bottom: 20px;
+      }
+      width: 54.16%;
+      margin-top: 0;
+      & * {
+        color: $white !important;
+      }
+      padding: 40px;
+      background: rgba($darkGrey, 0.5);
+      backdrop-filter: blur(4px);   
+      border-radius: 20px;
+      &__title{
+        margin-bottom: 40px;
+      }
+    }
+
+    .slider {
+      height: 598px;
+      &::before, &::after{
+        width: 60px;
+      }
+      &__item{
+        &:nth-child(1){
+          &>div{
+          background: url(../../images/m-1-t.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-1-t.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+        &:nth-child(2){
+          &>div{
+          background: url(../../images/m-2-t.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-2-t.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+        &:nth-child(3){
+          &>div{
+          background: url(../../images/m-3-t.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-3-t.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+        &:nth-child(4){
+          &>div{
+          background: url(../../images/m-4-t.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-4-t.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+      }
+      &__control {
+        width: 60px;
+        background-position: 0px 209px;
+        background-size: 40px 180px;
+
+
+        &[data-slide="next"]{
+          transform: rotateY(0deg);
+          left: unset;
+          right: 0;
+        }
+      }
+
+    
+      &__indicators {
+        left: calc(50% - 150px);
+        width: 300px;
+
+        left: calc(50% - 250px);
+        display: flex;
+        width: 500px;
+        li {
+          width: 60px;
+          height: 6px;
+        }
+      }
+    }
+  }
+
+
+  @media(min-width: 1920px){
+    &__wrapper{
+      height: 1073px;
+    }
+    &__title{
+      margin-bottom: 80px;
+    }
+    &__panel{
+      padding: 40px;
+      width: 57%;
+      margin-right: 0;
+      &__wrapper{
+        max-width: 1000px;
+        margin-top: -681px;
+        padding: 0;
+      }
+    }
+    &__item{
+      height: 929px;
+    }
+
+    .slider{
+      height: 929px;
+      &::before, &::after{
+        width: 80px;
+      }
+      &__indicators{
+        bottom: 40px;
+        left: calc(50% - 350px);
+        display: flex;
+        width: 700px;
+        li{
+          @include item-spacing(6px);
+        }
+      }
+
+      &__control {
+        width: 80px;
+        background: url(../../images/icons/slider-next-d.svg) no-repeat;
+        background-position: 0px 304.5px;
+        background-size: 40px 320px;
+        z-index: 2;
+      }
+
+      &__item{
+        &:nth-child(1){
+          &>div{
+          background: url(../../images/m-1.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-1.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+        &:nth-child(2){
+          &>div{
+          background: url(../../images/m-2.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-2.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+        &:nth-child(3){
+          &>div{
+          background: url(../../images/m-3.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-3.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+        &:nth-child(4){
+          &>div{
+          background: url(../../images/m-4.png) no-repeat;
+          background-position: center;
+          background-size: cover;
+          @supports (gap: 1px) {
+          background: url(../../images/m-4.webp) no-repeat;
+          background-position: center;
+          background-size: cover;
+          }
+          }
+        }
+      }
+    }
+
+    
+  }
+
+  @media(min-width: 1920px){
+
+    &__panel{
+      width: 38.88%;
+      &__wrapper{
+        max-width: 1440px;
+      }
+    }
+  }
+  
+}

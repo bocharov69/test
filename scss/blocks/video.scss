@@ -1,0 +1,123 @@
+.video {
+
+  @include standart-section-spacing;
+
+  &__wrapper {
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__title {
+    @include secondary-title;
+    margin-bottom: 40px;
+  }
+
+  &__body{
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.15));
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1.77 / 1;
+    width: 100%;
+    #player{
+      aspect-ratio: 1.77 / 1;
+    }
+
+    & > .plyr{
+      transform: scale(1.01);
+    }
+
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
+
+    .plyr__control--overlaid[data-plyr="play"] {
+      background: rgba($white , 0.8) !important;
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+      width: 36px;
+      height: 36px;
+      &::after{
+        content: '';
+        position: absolute;
+        background: url(../../images/icons/play-triangle.svg) no-repeat;
+        background-position: center;
+        width: 17.28px;
+        height: 17.28px;
+        top: 9.36px;
+        left: 10.36px;
+      }
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  @media(min-width: 768px){
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__body{
+      .plyr__control--overlaid[data-plyr="play"] {
+        width: 88px;
+        height: 88px;
+        &::after{
+          width: 42px;
+          height: 42px;
+          top: 23px;
+          left: 25px;
+          background-size: 35px;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__wrapper{
+      margin: 0 auto;
+    }
+
+    &__label{
+      display: block;
+      font-family: 'Posterama Text';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 140px;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: 0.1em;
+      color: rgba(98, 31, 42, 0.05);
+      margin-top: -40px;
+    }
+    &__title{
+      margin-bottom: 80px;
+    }
+    &__body{
+      border-radius: 20px;
+      .plyr__control--overlaid[data-plyr="play"] {
+        width: 100px;
+        height: 100px;
+        &::after{
+          width: 46px;
+          height: 46px;
+          top: 28px;
+          left: 30px;
+          background-size: 38px;
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1920px){
+    &__body{
+      margin: 0 auto;
+      max-width: 1070px;
+    }
+
+    &__label{
+      font-size: 200px;
+      margin-top: -120px;
+    }
+  }
+}

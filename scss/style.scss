@@ -1,0 +1,49 @@
+
+
+// Global (containers, vars etc.)
+
+@import './global/variables.scss';
+
+@import './global/containers.scss';
+
+@import './global/helpers.scss';
+
+@import './global/page.scss';
+
+@import './global/uikit.scss';
+
+// Page blocks
+
+@import './blocks/header.scss';
+
+@import './blocks/promo.scss';
+
+@import './blocks/widgets.scss';
+
+@import './blocks/advantages.scss';
+
+@import './blocks/project/project.scss';
+
+@import './blocks/stages.scss';
+
+@import './blocks/calc.scss';
+
+@import './blocks/cases.scss';
+
+@import './blocks/video.scss';
+
+@import './blocks/reviews.scss';
+
+@import './blocks/faq.scss';
+
+@import './blocks/m-call.scss';
+
+@import './blocks/dealer.scss';
+
+@import './blocks/shops.scss';
+
+@import './blocks/footer.scss';
+
+@import './blocks/main-modal.scss';
+
+@import './blocks/calc-modal.scss';

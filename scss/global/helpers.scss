@@ -1,0 +1,74 @@
+@mixin item-spacing($space){
+  margin-bottom: $space;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+}
+@mixin item-spacing-gor($space){
+  margin-right: $space;
+  &:last-of-type{
+    margin-right: 0;
+  }
+}
+
+@mixin item-spacing-gor-reverse($space){
+  margin-right: $space;
+  &:first-child{
+    margin-right: 0;
+  }
+}
+
+@mixin ver-p($top, $bottom: $top){
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin ver-m($top, $bottom: $top){
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+@mixin standart-section-spacing{
+  @include ver-m(80px);
+  @media(min-width: 768px){
+    @include ver-m(100px);
+  }
+  @media(min-width: 1440px){
+    @include ver-m(140px);
+  }
+}
+
+@mixin extra-section-spacing($extra1, $extra2, $extra3){
+  @include ver-m((80px + $extra1));
+  @media(min-width: 768px){
+    @include ver-m((100px + $extra2));
+  }
+  @media(min-width: 1440px){
+    @include ver-m((140px + $extra3));
+  }
+}
+
+@mixin visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.no-scroll-y{
+  overflow-y: hidden;
+}
+
+
+.js-copytextarea{
+  display: none;
+}
+
+

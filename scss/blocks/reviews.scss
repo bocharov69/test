@@ -1,0 +1,201 @@
+.reviews {
+  @include extra-section-spacing(-25px, -25px, -25px);
+
+  &__wrapper {
+    overflow: hidden;
+    padding-bottom: 25px !important;
+  }
+
+  &__title {
+    @include secondary-title;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.15));
+    border-radius: 12px;
+    background: #FBFBFB;
+    &__modal-content{
+      display: none;
+    }
+    &__content{
+      padding: 20px;
+    }
+
+    &__title{
+      @include third-title;
+      margin-bottom: 12px;
+    }
+    &__description {
+      margin-bottom: 20px;
+      @include main-text;
+      background: linear-gradient(180deg, #373E46 0%, rgba(55, 62, 70, 0.5) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    &__link{
+      @include link-with-pointer;
+    }
+  }
+
+  .slider {
+    padding-bottom: 25px;
+
+    &__container {
+    }
+  
+    &__wrapper {
+      overflow: visible;
+    }
+  
+    &__items {
+    }
+  
+    &__item {
+      padding: 0 50px;
+      opacity: 0;
+      transition: opacity 300ms ease-in;
+      &_active{
+        opacity: 1;
+      }
+      
+
+    }
+  
+    &__control {
+      height: 100%;
+      width: 40px;
+      background: url(../../images/icons/slider-next-grey.svg) no-repeat;
+      background-position: 20px 75px;
+      background-size: 10px 40px;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg);
+      &[data-slide="next"]{
+        transform: rotateY(0deg);
+        left: unset;
+        right: 0;
+      }
+    }
+  
+    &__indicators {
+      position: absolute;
+      bottom: 0px;
+      transform: translate(-50%);
+      left: 50%;
+      margin: 0;
+      li {
+        cursor: pointer;
+        @include item-spacing-gor(8px);
+        width: 20px;
+        box-sizing: content-box;
+        height: 2px;
+        background: rgba($darkGrey, 0.3);
+        &:hover{
+          background: rgba($darkGrey, 0.5);
+        }
+      }
+      li.active{
+        background: $darkGrey;
+      }
+    }
+  }
+
+  @media(min-width: 768px){
+    &__wrapper{
+      padding: 0 40px;
+    }
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__item {
+      filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.1));
+      border-radius: 20px;
+      &__picture{
+        cursor: pointer;
+        height: 160px;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        background: url(../../images/r-1.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        @supports (gap: 1px) {
+        background: url(../../images/r-1.webp) no-repeat;
+        background-position: center;
+        background-size: cover;
+        }
+      }
+    }
+    .slider{
+      padding: 0 40px;
+      &__item{
+        padding: 0 20px;
+        max-width: 50%;
+        flex: 0 0 50%;
+      }
+      &__indicators{
+        display: none;
+      }
+
+      &__control {
+        width: 20px;
+        background: url(../../images/icons/slider-next-grey-t.svg) no-repeat;
+
+        background-position: 0px 130px;
+        background-size:20px 100px;
+        top: 0;
+        left: 0;
+      }
+
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__wrapper{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0
+    }
+    &__title{
+      margin-bottom: 80px;
+    }
+    &__item{
+      &__picture{
+        height: 200px;
+      }
+    }
+    .slider{
+      padding: 0 90px;
+      &__control {
+        width: 70px;
+        background: url(../../images/icons/slider-next-grey-d.svg) no-repeat;
+        background-position: 30px 171px;
+        background-size:40px 92px;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  @media(min-width: 1920px){
+    &__wrapper{
+      max-width: 1440px;
+    }
+
+    .slider{
+      padding: 0 83px;
+      &__item{
+        max-width: 33.33%;
+        flex: 0 0 33.33%;
+      }
+    }
+  }
+  
+}
+
+

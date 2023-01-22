@@ -1,0 +1,235 @@
+.promo {
+  @include standart-section-spacing;
+  margin-top: 0px !important;
+
+  &__text{
+    background: rgba(55, 62, 70, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 180px;
+    background-image: url('../../images/bg-1-m.png');
+    min-height: 465px;
+    background-repeat: no-repeat;
+    background-position: center;
+    @supports (gap: 1px) {
+    background-image: url('../../images/bg-1-m.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+  }
+
+  &__title {
+    @include main-title;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    
+    color: #FFFFF0;
+    
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__socials {
+    margin: 0 auto;
+    margin-bottom: -24px;
+    &__list {
+      margin: 0 auto;
+      display: flex;
+      border-radius: 12px;
+      height: 48px;
+      background: $vinous;
+
+      &__item{
+        &__link{
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 14px 22px;
+          transition: background 300ms ease-in-out, color 300ms ease-in-out;
+          border-radius: 12px;
+          span{
+            display: none;
+          }
+          svg path{
+            fill: $white;
+          }
+          &:hover{
+            background: $white;
+            svg path{
+              fill: $vinous;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__down{
+    display: none;
+  }
+
+  @media(min-width: 768px){
+    &__down{
+      display: block;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      cursor: pointer;
+      &__icon{
+        display: none;
+        &--m{
+          display: block;
+        }
+        circle{
+          transition: fill 300ms ease-in-out;
+        }
+      }
+
+      &:hover{
+        svg{
+          circle{
+            fill:rgba(255,255,255, 0.3);
+          }
+        }
+      }
+    }
+    &__subtitle{
+    font-size: 22px;
+    line-height: 27px;
+    }
+    &__wrapper{
+      background: url('../../images/bg-1-m.png');
+      padding-top: 165px;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url('../../images/bg-1-m.webp');
+      background-size: cover;
+      }
+    }
+  }
+
+  @media(min-width: 1024px){
+    &__wrapper{
+      min-height: 637px;
+      background: url('../../images/bg-1.png');
+      background-position: center;
+      background-size: cover;
+      @supports (gap: 1px) {
+      background: url('../../images/bg-1.webp');
+      background-position: center;
+      background-size: cover;
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    background: url('../../images/bg-1.png');
+    background-position: center;
+    background-size: cover;
+    @supports (gap: 1px) {
+    background: url('../../images/bg-1.webp');
+    background-position: center;
+    background-size: cover;
+    }
+
+    &__wrapper{
+      min-height: 837px;
+      padding-top: 207px;
+      margin: 0 auto;
+      background: none;
+    }
+    &__title, &__subtitle{
+      text-align: start;
+    }
+  &__text{
+    padding: 40px;
+    width: fit-content;
+    transform: translateX(-89px);
+
+  }
+  &__title{
+    margin-bottom: 50px;
+  }
+
+
+
+    &__subtitle{
+      br {
+        display: none;
+      }
+    }
+    
+
+    &__down{
+      right: 0;
+      bottom: 40px;
+      &__icon{
+        display: block;
+        &--m{
+          display: none;
+        }
+      }
+    }
+
+    &__socials {
+      margin-bottom: -36px;
+      &__list{
+        height: 72px;
+        border-radius: 20px;
+        &__item{
+          &__link{
+            border-radius: 20px;
+            &:hover{
+              border-radius: 20px;
+              span{
+                color: $vinous;
+              }
+            }
+            span {
+              font-family: 'Montserrat';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 22px;
+              color: $white;
+              display: block;
+            }
+            padding: 20px 32px;
+            svg{
+              width: 32px;
+              height: 32px;
+              margin-right: 14.67px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  @media(min-width: 1920px){
+    &__wrapper{
+      padding-top: 281px;
+    }
+    &__text{
+      margin-left: 93px;
+    }
+  }
+}
+

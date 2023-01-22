@@ -1,0 +1,41 @@
+@mixin ball {
+  width: 32px;
+  height: 32px;
+  background: $white;
+  border-radius: 50%;
+  position: relative;
+
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform-origin: center;
+    width: 32px;
+    height: 32px;
+    animation: ballDisolve 1400ms ease-out 0ms infinite;
+  }
+  
+   
+}
+
+@keyframes ballDisolve {
+
+  20%{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  80%{
+    transform: scale(2.25);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.25);
+  }
+  
+}

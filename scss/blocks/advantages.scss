@@ -1,0 +1,101 @@
+.advantages {
+  @include standart-section-spacing;
+  &__wrapper{
+
+  }
+
+  &__title {
+    @include secondary-title;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    &__item{
+      padding: 20px;
+      background: #FBFBFB;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      @include item-spacing(20px);
+      &__title{
+        margin-top: 20px;
+        margin-bottom: 12px;
+        @include third-title;
+      }
+      &__description{
+        @include secondary-text;
+      }
+    }
+  }
+
+  @media(min-width: 768px){
+    &__title{
+      margin-bottom: 60px;
+    }
+    &__list{
+      display: flex;
+      justify-content: space-between;
+      &__item{
+        width: 31.39%;
+        padding: 20px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media(min-width: 1440px){
+    &__wrapper{
+      margin: 0 auto;
+    }
+    &__title{
+      margin-bottom: 80px;
+      position: relative;
+      &::before{
+        content: 'Преимущества';
+        position: absolute;
+        font-family: 'Posterama Text';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 110px;
+        line-height: 100%;
+        opacity: 0.1;
+        letter-spacing: 0.1em;
+        color: $darkGrey;
+        bottom: -100px;
+        left: 40px;
+      }
+    }
+
+    &__list{
+      z-index: 1;
+      position: relative;
+      padding: 32px 60px;
+      background: #FBFBFB;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      &__item{
+        padding: 0px;
+        box-shadow: none;
+        border-radius: 0;
+        width: 280px;
+      }
+    }
+  }
+
+  @media(min-width: 1920px){
+    &__title{
+      margin-bottom: 140px;
+      &::before{
+        font-size: 170px;
+        line-height: 100%;
+        bottom: -153px;
+        left: 0;
+      }
+    }
+    &__list{
+      &__item{
+        width: 300px;
+      }
+    }
+  }
+}
+
